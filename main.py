@@ -2,7 +2,6 @@
 
 import tweepy
 import openai
-import time
 from config import API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_SECRET, OPENAI_API_KEY
 from prompts import TWEET_PROMPT
 
@@ -19,9 +18,13 @@ def create_tweet():
     return response.choices[0].message.content.strip()
 
 def post_tweet(tweet_text):
-    auth = tweepy.OAuth1UserHandler(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_SECRET)
-    api = tweepy.API(auth)
-    api.update_status(tweet_text)
+    client = tweepy.Client(
+        consumer_key=API_KEY,
+        consumer_secret=API_SECRET,
+        access_token=ACCESS_TOKEN,
+        access_token_secret=ACCESS_SECRET
+    )
+    client.create_tweet(text=tweet_text)
     print("✅ Tweeted:", tweet_text)
 
 if __name__ == "__main__":
