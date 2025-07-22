@@ -10,7 +10,7 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 def create_tweet():
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "You're an AI crypto bot posting edgy, viral tweets."},
             {"role": "user", "content": TWEET_PROMPT}
