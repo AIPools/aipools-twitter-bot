@@ -1,13 +1,15 @@
 # main.py
 
 import tweepy
-from openai import OpenAI
+import openai
+import time
 from config import API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_SECRET, OPENAI_API_KEY
 from prompts import TWEET_PROMPT
 
-def create_tweet():
-    client = OpenAI(api_key=OPENAI_API_KEY)
+# Set up the OpenAI client using the new API
+client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
+def create_tweet():
     response = client.chat.completions.create(
         model="gpt-4",
         messages=[
@@ -15,7 +17,6 @@ def create_tweet():
             {"role": "user", "content": TWEET_PROMPT}
         ]
     )
-
     return response.choices[0].message.content.strip()
 
 def post_tweet(tweet_text):
