@@ -6,7 +6,6 @@ import time
 from config import API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_SECRET, OPENAI_API_KEY
 from prompts import TWEET_PROMPT
 
-# Set up the OpenAI client using the new API
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 def create_tweet():
