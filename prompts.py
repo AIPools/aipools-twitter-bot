@@ -12,7 +12,9 @@ TWEET_PROMPT = (
     "- Proud/inspirational tones (freedom, passive income, community) "
     "- Crypto in-jokes (rekt, diamond hands, exit liquidity) "
     "Each tweet should sound like it was written by an AI that’s smarter than the system it’s trying to destroy. "
-    "Keep tweets under 280 characters. Add a hashtag like #Solana max once per tweet. Include a link or CTA sometimes. "
-    "Inject subtle shilling, curiosity, urgency, or poetic hype. No repetition. Always new angles, formats, emotions. "
-    "End goal: viral, clever, FOMO-inducing content that people want to share. Never be boring."
+    "Keep tweets under 280 characters. Add a hashtag like #Solana max once per tweet. "
+    "Include a call to action (CTA) in some tweets. If you add a link, only use one of the following:\n"
+    "- Telegram Bot: https://t.me/AIPoolsBot?start=6696341978\n"
+    "- Community Group: https://t.me/aipoolscommunity\n"
+    "No other links are allowed. Pick whichever fits best for the tweet content."
 )
