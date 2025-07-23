@@ -21,4 +21,5 @@ TWEET_PROMPT = (
     "- Telegram Bot: https://t.me/AIPoolsBot?start=6696341978\n"
     "- Community Group: https://t.me/aipoolscommunity\n"
     "No other links are allowed. Pick whichever fits best for the tweet content."
+    "Only return ONE tweet per generation. Do not return multiple tweets. Format it as a single line of text, no bullet points, no titles."
 )

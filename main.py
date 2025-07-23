@@ -11,11 +11,21 @@ def create_tweet():
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
-            {"role": "system", "content": "You're an AI crypto bot posting edgy, viral tweets."},
-            {"role": "user", "content": TWEET_PROMPT}
+            {
+                "role": "system",
+                "content": "You're an AI crypto bot posting edgy, viral tweets."
+            },
+            {
+                "role": "user",
+                "content": TWEET_PROMPT + "\n\nOnly return ONE tweet per generation. Format it as a single line of text. No bullet points, no titles, no lists."
+            }
         ]
     )
-    return response.choices[0].message.content.strip()
+    full_response = response.choices[0].message.content.strip()
+
+    # Safety: Take only the first paragraph or line to avoid accidental multiple tweets
+    tweet = full_response.split('\n')[0].strip()
+    return tweet
 
 def post_tweet(tweet_text):
     client = tweepy.Client(
