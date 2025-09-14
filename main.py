@@ -9,7 +9,7 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 def create_tweet():
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[
             {
                 "role": "system",
